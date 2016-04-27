@@ -105,13 +105,28 @@ $forest: #20572B
   #main-nav.navbar
     background: white
     margin-bottom: 0
-    white-space: nowrap // prevent home icon from going under brand
+    //white-space: nowrap // prevent home icon from going under brand
 
     a.navbar-brand
       #logo-img
+        @media (max-width: $screen-lg-min)
+          display: none
+        @media (max-width: $screen-sm-min)
+          display: inline
         width: 230px
         height: 65px
         margin-right: 10px
+      #logo-img-sm
+        display: none
+        @media (max-width: $screen-lg-min)
+          display: inline-block
+        @media (max-width: $screen-sm-min)
+          display: none
+
+        width: 65px
+        height: 65px
+        margin-right: 10px
+
 
       color: $burgandy
       &:hover
@@ -145,6 +160,8 @@ $forest: #20572B
       display: inline-block
       padding: 30px 10px
       width: 100%
+      @media (max-width: $screen-md-min)
+          display: none
       
     @media (max-width: $screen-sm-min)
       .nav > li > a
